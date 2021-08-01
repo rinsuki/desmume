@@ -37,7 +37,7 @@ jobs:
       - name: Build Xcode Project
         run: |
           cd desmume/src/frontend/cocoa
-          xcodebuild archive -project "DeSmuME (Latest).xcodeproj" -scheme "DeSmuME (OS X App -- Latest Xcode)" -arch x86_64 -archivePath ./archive
+          xcodebuild archive -project "DeSmuME (Latest).xcodeproj" -scheme "DeSmuME (OS X App -- Latest Xcode)" -arch x86_64 -archivePath ./archive | xcpretty -c
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
