@@ -19,8 +19,7 @@ jobs:
 
       - name: Build solution
         run: |
-          SET CL=-Wno-c++11-narrowing
-          msbuild 'desmume/src/frontend/windows/DeSmuME.sln' /p:configuration="Release" /p:platform=x64 /p:CL_cgthreads=1 /p:CLToolExe=clang-cl.exe
+          msbuild 'desmume/src/frontend/windows/DeSmuME.sln' /p:configuration="Release" /p:platform=x64 /p:CL_cgthreads=1 /p:CLToolExe=clang-cl.exe /p:CL=-Wno-c++11-narrowing
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
